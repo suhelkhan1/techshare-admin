@@ -123,5 +123,10 @@
       }
     }
   },
-  "defaultProject": "techshare"
+  "defaultProject": "techshare",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }
