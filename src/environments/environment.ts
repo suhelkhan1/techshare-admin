@@ -3,7 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  APP: {
+    BASE_URL: 'http://192.168.2.102:3000/api/',
+
+    GET_SYMBOL_LIST(exchange) { return `symbol/${exchange}`; },
+  }
 };
 
 /*
