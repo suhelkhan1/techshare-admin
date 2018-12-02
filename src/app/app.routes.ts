@@ -7,6 +7,10 @@ const routes: Routes = [
     loadChildren: './home/home.module#HomeModule'
   },
   {
+    path: 'masters',
+    loadChildren: './master/master.module#MasterModule'
+  },
+  {
     path: '', redirectTo: 'home', pathMatch: 'full'
   }
 ];

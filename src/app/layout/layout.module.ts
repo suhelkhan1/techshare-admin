@@ -4,7 +4,9 @@ import {
   NbThemeModule,
   NbSidebarModule,
   NbLayoutModule,
-  NbSidebarService
+  NbMenuModule,
+  NbSidebarService,
+  NbMenuService,
 } from '@nebular/theme';
 
 import {
@@ -13,30 +15,37 @@ import {
   SidebarComponent
 } from './components/index';
 
-const Nebular = [
+const NebularModules = [
   NbSidebarModule,
   NbLayoutModule,
+];
+const NebularServices = [
+  NbSidebarService,
+  NbMenuService
+];
+const LayoutComponents = [
+  HeaderComponent,
+  FooterComponent,
+  SidebarComponent
 ];
 @NgModule({
   imports: [
     CommonModule,
     NbThemeModule.forRoot({ name: 'default' }),
-    ...Nebular,
+    NbMenuModule.forRoot(),
+    ...NebularModules,
   ],
   declarations: [
-    HeaderComponent,
-    FooterComponent,
-    SidebarComponent
+    ...LayoutComponents
   ],
   providers: [
-    NbSidebarService,
+    ...NebularServices,
   ],
   exports: [
     NbThemeModule,
-    ...Nebular,
-    HeaderComponent,
-    FooterComponent,
-    SidebarComponent
+    NbMenuModule,
+    ...NebularModules,
+    ...LayoutComponents
   ]
 })
 export class LayoutModule { }

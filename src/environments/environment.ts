@@ -7,7 +7,7 @@ export const environment = {
   APP: {
     BASE_URL: 'http://192.168.2.102:3000/api/',
 
-    GET_SYMBOL_LIST(exchange) { return `symbol/${exchange}`; },
+    GET_LIST(master, param) { return `${master}/${param}`; },
   }
 };
 
